@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <style>
+            .b{
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .d{
+                margin-top:17%;
+                opacity:1.5;
+            }
+            .d1{
+                text-align: center;
+            }
+        </style>
+        <script>
+            function convertTemperature() {
+                var input = document.getElementById("input").value;
+                var unit = document.getElementById("unit").value;
+                var output = document.getElementById("output");
+                if (unit === "celsius-to-fahrenheit") {
+                    output.value = (input * 9/5) + 32;
+                } else if (unit === "fahrenheit-to-celsius") {
+                    output.value = (input - 32) * 5/9;
+                } else {
+                    output.value = input;
+                }
+            }
+        </script>    
+    </head>
+    <body background="temp1.jpg" class="b">
+        <div class="d">
+        <h2 align="center">Conversion of Temperature</h2>
+        <div class="d1">
+            <font color="black">Input Temperature is:</font><input type="number" placeholder="Enter Temperature" id="input"/><br><br>
+            <font color="black">Unit:</font>
+            <select id="unit">
+                <option value="celsius-to-fahrenheit">Celsius to Fahrenheit</option>
+                <option value="fahrenheit-to-celsius">Fahrenheit to Celsius</option>
+            </select><br><br>
+            <font color="black">Output Temperature is:</font><input type="number" id="output" readonly/><br><br>
+            <button onclick="convertTemperature()">Submit</button></div>
+        </div>
+    </body>
+</html>
